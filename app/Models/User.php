@@ -3,24 +3,18 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Notifications\Notifiable;
+use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
 
 class User extends Authenticatable
 {
-    use HasFactory, Notifiable;
+    use HasFactory, HasUuids, Notifiable;
 
-    /**
-     * The attributes that are mass assignable.
-     *
-     * @var array<int, string>
-     */
-    protected $fillable = [
-        'name',
-        'email',
-        'password',
-    ];
+    public $incrementing = false;
+
+    protected $guarded = [];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -43,5 +37,48 @@ class User extends Authenticatable
             'email_verified_at' => 'datetime',
             'password' => 'hashed',
         ];
+    }
+
+    public static function theadmin()
+    {
+        $admin = DB::table('users')->latest('id')->first();
+
+        if ($admin != null) {
+
+            $admin = $admin->id;
+
+        } else {
+
+        }
+
+        return $admin;
+    }
+
+    public function comments()
+    {
+
+        return $this->hasMany('App\Models\Comment');
+
+    }
+
+    public function department()
+    {
+
+        return $this->belongsTo('App\Models\Department');
+
+    }
+
+    public function title()
+    {
+
+        return $this->belongsTo('App\Models\Title');
+
+    }
+
+    public function group()
+    {
+
+        return $this->belongsTo('App\Models\Group');
+
     }
 }
