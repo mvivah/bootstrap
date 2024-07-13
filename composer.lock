@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "37e7f6d63a0771265bd3354f0c24cfc9",
+    "content-hash": "ce1096b193fd552d9bb1549a44dac998",
     "packages": [
         {
             "name": "brick/math",
@@ -505,6 +505,56 @@
                 }
             ],
             "time": "2023-10-06T06:47:41+00:00"
+        },
+        {
+            "name": "freshbitsweb/laratables",
+            "version": "v1.0.7",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/freshbitsweb/laratables.git",
+                "reference": "309c6e7fbe20fc0052657cc7016de9247c4f506b"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/freshbitsweb/laratables/zipball/309c6e7fbe20fc0052657cc7016de9247c4f506b",
+                "reference": "309c6e7fbe20fc0052657cc7016de9247c4f506b",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=7.0"
+            },
+            "type": "library",
+            "extra": {
+                "laravel": {
+                    "providers": [
+                        "Freshbitsweb\\Laratables\\LaratablesServiceProvider"
+                    ]
+                }
+            },
+            "autoload": {
+                "files": [
+                    "src/helpers.php"
+                ],
+                "psr-4": {
+                    "Freshbitsweb\\Laratables\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Gaurav Makhecha",
+                    "email": "info@freshbits.in"
+                }
+            ],
+            "description": "Ajax support of DataTables for Laravel 5.5+",
+            "support": {
+                "issues": "https://github.com/freshbitsweb/laratables/issues",
+                "source": "https://github.com/freshbitsweb/laratables/tree/v1.0.7"
+            },
+            "time": "2018-09-01T14:44:20+00:00"
         },
         {
             "name": "fruitcake/php-cors",
